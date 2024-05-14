@@ -1,0 +1,25 @@
+# ninja log v5
+788	873	7374075830591116	SDL2Tutorial.exe	7848a5ea566845a2
+16	630	7374185791183561	CMakeFiles/dawn-engine.dir/src/Node.cpp.obj	b1d637ea526a860c
+3	921	7374185794091080	CMakeFiles/dawn-engine.dir/src/CollisionObject2D.cpp.obj	599f8a65b6c2bfa8
+21	974	7374185794623625	CMakeFiles/dawn-engine.dir/src/Node2D.cpp.obj	14783be6bef55a64
+8	730	7374185792192333	CMakeFiles/dawn-engine.dir/src/main.cpp.obj	948e182c796b9d31
+13	520	7374175040651309	CMakeFiles/dawn-engine.dir/include/CollisionObject2D.cpp.obj	f6e4054b983bbce1
+30	1008	7374185794979552	CMakeFiles/dawn-engine.dir/src/root.cpp.obj	6359003550aec9b8
+25	973	7374185794623625	CMakeFiles/dawn-engine.dir/src/Collision.cpp.obj	e0e07aa2e586612e
+1009	1124	7374185796095605	dawn-engine.exe	61a889d77dea1fa1
+1	138	7374222451848639	build.ninja	43e65a2d1c0c4fea
+12	450	7374185789374531	CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj	cd10941d9023ce59
+35	962	7374185794508542	CMakeFiles/dawn-engine.dir/src/Sprite2D.cpp.obj	936a144686ba2204
+1	152	7374222451848639	build.ninja	43e65a2d1c0c4fea
+11	1204	7374222464445550	CMakeFiles/dawn-engine.dir/src/Node.cpp.obj	b1d637ea526a860c
+3	1221	7374222464615941	CMakeFiles/dawn-engine.dir/src/main.cpp.obj	948e182c796b9d31
+49	1271	7374222465107054	CMakeFiles/dawn-engine.dir/src/SceneTree.cpp.obj	2804af62243d9f7c
+7	1320	7374222465588091	CMakeFiles/dawn-engine.dir/src/Node2D.cpp.obj	14783be6bef55a64
+43	1336	7374222465758432	CMakeFiles/dawn-engine.dir/src/StaticBody2D.cpp.obj	e4a97b4fe38deef0
+16	1337	7374222465778450	CMakeFiles/dawn-engine.dir/src/root.cpp.obj	6359003550aec9b8
+27	1351	7374222465914432	CMakeFiles/dawn-engine.dir/src/CollisionObject2D.cpp.obj	599f8a65b6c2bfa8
+21	1355	7374222465964475	CMakeFiles/dawn-engine.dir/src/Sprite2D.cpp.obj	936a144686ba2204
+38	1359	7374222465999520	CMakeFiles/dawn-engine.dir/src/Area2D.cpp.obj	6b31cc984866be2a
+32	1386	7374222466264884	CMakeFiles/dawn-engine.dir/src/Collision.cpp.obj	e0e07aa2e586612e
+1386	1500	7374222467386674	dawn-engine.exe	fc79d4f119dde0ed
