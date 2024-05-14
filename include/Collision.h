@@ -2,7 +2,7 @@
 #define COLLISION_H
 
 #include "SDL.h"
-#include "../include/CollisionObject2D.h"
+#include "Nodes/CollisionObject2D.h"
 
 class Collision {
 public:

@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
-//TODO: Implement memory management and child tree
+//TODO: Implement memory management
 //TODO: Implement scene tree methods
 class Node {
 public:
@@ -17,8 +17,8 @@ public:
     void add_to_group(char* groupname);
     bool remove_from_group(char* groupname);
 private:
-    void queue_free();
     std::vector<std::unique_ptr<Node>> children;
+    //if parent==nullptr add node to root child array
     Node* parent;
     std::size_t node_id;
     std::vector<char*> groups;

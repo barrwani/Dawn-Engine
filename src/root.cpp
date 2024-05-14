@@ -8,7 +8,7 @@ SDL_Event root::event;
 
 bool root::isRunning = false;
 
-SDL_Rect root::camera = { 0,0,800,640 };
+SDL_Rect root::camera = { 0,0,1920,1080 };
 
 root::root()
 = default;
@@ -42,8 +42,6 @@ void root::init(const char *title, int xpos, int ypos, int width, int height, bo
 
     } else
         isRunning = false;
-
-
 
 }
 

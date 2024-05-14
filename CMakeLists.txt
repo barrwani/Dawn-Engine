@@ -11,25 +11,24 @@ include_directories(${SDL2_INCLUDE_DIR})
 
 
 add_executable(dawn-engine src/main.cpp
-        src/Node2D.cpp
-        include/Node2D.h
-        src/Node.cpp
-        include/Node.h
+        src/Nodes/Node2D.cpp
+        include/Nodes/Node2D.h
+        src/Nodes/Node.cpp
+        include/Nodes/Node.h
         src/root.cpp
         include/root.h
         src/Collision.cpp
         include/Collision.h
-        src/CollisionObject2D.cpp
-        include/CollisionObject2D.h
+        src/Nodes/CollisionObject2D.cpp
+        include/Nodes/CollisionObject2D.h
         src/Vector2.cpp
         include/Vector2.h
-        src/Sprite2D.cpp
-        include/Sprite2D.h
-        src/Area2D.cpp
-        include/Area2D.h
-        src/StaticBody2D.cpp
-        include/StaticBody2D.h
-        src/SceneTree.cpp
-        include/SceneTree.h)
+        src/Nodes/Sprite2D.cpp
+        include/Nodes/Sprite2D.h
+        src/Nodes/Area2D.cpp
+        include/Nodes/Area2D.h
+        src/Nodes/StaticBody2D.cpp
+        include/Nodes/StaticBody2D.h
+)
 
 target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARY})

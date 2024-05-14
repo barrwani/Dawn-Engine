@@ -3,7 +3,7 @@
 
 
 #include <SDL.h>
-#include "Node.h"
+#include "Nodes/Node.h"
 #include <vector>
 
 class AssetManager;

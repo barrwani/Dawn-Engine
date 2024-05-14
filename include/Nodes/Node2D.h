@@ -1,7 +1,7 @@
 #ifndef NODE2D_H
 #define NODE2D_H
 #include "Node.h"
-#include "Vector2.h"
+#include "../Vector2.h"
 
 //Set up basic node2D methods
 class Node2D : public Node {

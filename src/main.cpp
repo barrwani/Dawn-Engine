@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
     rootscene = new root();
 
     rootscene->init("Dawn Engine", SDL_WINDOWPOS_CENTERED,
-               SDL_WINDOWPOS_CENTERED, 800, 640, false);
+               SDL_WINDOWPOS_CENTERED, 1024, 600, false);
 
 
     while(root::running())

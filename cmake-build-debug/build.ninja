@@ -56,19 +56,19 @@ build CMakeFiles/dawn-engine.dir/src/main.cpp.obj: CXX_COMPILER__dawn-engine_uns
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
   OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
 
-build CMakeFiles/dawn-engine.dir/src/Node2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Node2D.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Node2D.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/Node2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/Node2D.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\Node2D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
-build CMakeFiles/dawn-engine.dir/src/Node.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Node.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Node.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/Node.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/Node.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\Node.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
 build CMakeFiles/dawn-engine.dir/src/root.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/root.cpp || cmake_object_order_depends_target_dawn-engine
   DEP_FILE = CMakeFiles\dawn-engine.dir\src\root.cpp.obj.d
@@ -84,12 +84,12 @@ build CMakeFiles/dawn-engine.dir/src/Collision.cpp.obj: CXX_COMPILER__dawn-engin
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
   OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
 
-build CMakeFiles/dawn-engine.dir/src/CollisionObject2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/CollisionObject2D.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\CollisionObject2D.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/CollisionObject2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/CollisionObject2D.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\CollisionObject2D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
 build CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Vector2.cpp || cmake_object_order_depends_target_dawn-engine
   DEP_FILE = CMakeFiles\dawn-engine.dir\src\Vector2.cpp.obj.d
@@ -98,33 +98,26 @@ build CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj: CXX_COMPILER__dawn-engine_
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
   OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
 
-build CMakeFiles/dawn-engine.dir/src/Sprite2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Sprite2D.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Sprite2D.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/Sprite2D.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\Sprite2D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
-build CMakeFiles/dawn-engine.dir/src/Area2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Area2D.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Area2D.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/Area2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/Area2D.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\Area2D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
-build CMakeFiles/dawn-engine.dir/src/StaticBody2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/StaticBody2D.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\StaticBody2D.cpp.obj.d
+build CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/Nodes/StaticBody2D.cpp || cmake_object_order_depends_target_dawn-engine
+  DEP_FILE = CMakeFiles\dawn-engine.dir\src\Nodes\StaticBody2D.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
-
-build CMakeFiles/dawn-engine.dir/src/SceneTree.cpp.obj: CXX_COMPILER__dawn-engine_unscanned_Debug C$:/Users/asood/CLionProjects/dawn-engine/src/SceneTree.cpp || cmake_object_order_depends_target_dawn-engine
-  DEP_FILE = CMakeFiles\dawn-engine.dir\src\SceneTree.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/include/SDL2
-  OBJECT_DIR = CMakeFiles\dawn-engine.dir
-  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\dawn-engine.dir\src\Nodes
 
 
 # =============================================================================
@@ -134,7 +127,7 @@ build CMakeFiles/dawn-engine.dir/src/SceneTree.cpp.obj: CXX_COMPILER__dawn-engin
 #############################################
 # Link the executable dawn-engine.exe
 
-build dawn-engine.exe: CXX_EXECUTABLE_LINKER__dawn-engine_Debug CMakeFiles/dawn-engine.dir/src/main.cpp.obj CMakeFiles/dawn-engine.dir/src/Node2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Node.cpp.obj CMakeFiles/dawn-engine.dir/src/root.cpp.obj CMakeFiles/dawn-engine.dir/src/Collision.cpp.obj CMakeFiles/dawn-engine.dir/src/CollisionObject2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj CMakeFiles/dawn-engine.dir/src/Sprite2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Area2D.cpp.obj CMakeFiles/dawn-engine.dir/src/StaticBody2D.cpp.obj CMakeFiles/dawn-engine.dir/src/SceneTree.cpp.obj | C$:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2main.a C$:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2.dll.a
+build dawn-engine.exe: CXX_EXECUTABLE_LINKER__dawn-engine_Debug CMakeFiles/dawn-engine.dir/src/main.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/Node2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/Node.cpp.obj CMakeFiles/dawn-engine.dir/src/root.cpp.obj CMakeFiles/dawn-engine.dir/src/Collision.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/CollisionObject2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/Area2D.cpp.obj CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj | C$:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2main.a C$:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2.dll.a
   FLAGS = -g
   LINK_LIBRARIES = -lmingw32  -mwindows  C:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2main.a  C:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32/lib/libSDL2.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\dawn-engine.dir
