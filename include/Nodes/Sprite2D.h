@@ -2,19 +2,41 @@
 #ifndef SPRITE2D_H
 #define SPRITE2D_H
 #include "Node2D.h"
+#include "SDL_image.h"
+#include <map>
+
+struct Animation{
+
+    int index;
+    int speed;
+    int frames;
+
+    Animation() {}
+    Animation(int i, int s, int f) {index = i; speed = s; frames = f; }
+};
 
 //TODO: Set up SDL_Image, image transformations
 class Sprite2D : public Node2D{
 public:
-    Sprite2D();
+    //Constructors, Destructor
+    explicit Sprite2D(const char* fileName);
+    Sprite2D(const char* fileName, int w, int h);
     ~Sprite2D();
-    static void Draw(SDL_Texture* tex, SDL_Rect src, SDL_Rect dest, SDL_RendererFlip flip);
-private:
+    static SDL_Texture* LoadTexture(const char* fileName);
+
+    std::map<const char*, Animation> animations;
+    SDL_RendererFlip spriteFlip = SDL_FLIP_NONE;
+
+    void update() override;
+    void draw() override;
+    int currentFrame = 0;
+
+
+protected:
+    SDL_Texture* texture{};
+    SDL_Rect srcRect{}, destRect{};
     const char* src;
     bool visible;
-    bool flip_h;
-    bool flip_v;
-
 
 };
 

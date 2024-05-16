@@ -1,13 +1,17 @@
-cmake_minimum_required(VERSION 3.27)
-project(dawn-engine)
+cmake_minimum_required(VERSION 3.25)
+project (dawn-engine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules)
-set(SDL2_PATH "C:/Users/asood/SDL2-2.30.3/x86_64-w64-mingw32")
+set(SDL2_INCLUDE_DIR C://libs/sdl2/include)
+set(SDL2_LIB_DIR C://libs/sdl2/lib/x86)
+set(SDL2_IMAGES_DIR C://libs/sdl2_image/include)
+set(SDL2_IMAGES_LIB_DIR C://libs/sdl2_image/lib/x86)
 
-find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
+link_directories(${SDL2_LIB_DIR})
+include_directories(${SDL2_IMAGES_DIR})
+link_directories(${SDL2_IMAGES_LIB_DIR})
 
 
 add_executable(dawn-engine src/main.cpp
@@ -17,8 +21,6 @@ add_executable(dawn-engine src/main.cpp
         include/Nodes/Node.h
         src/root.cpp
         include/root.h
-        src/Collision.cpp
-        include/Collision.h
         src/Nodes/CollisionObject2D.cpp
         include/Nodes/CollisionObject2D.h
         src/Vector2.cpp
@@ -29,6 +31,11 @@ add_executable(dawn-engine src/main.cpp
         include/Nodes/Area2D.h
         src/Nodes/StaticBody2D.cpp
         include/Nodes/StaticBody2D.h
+        src/Nodes/CharacterBody2D.cpp
+        include/Nodes/CharacterBody2D.h
+        src/QuadTree.cpp
+        include/QuadTree.h
 )
 
-target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARY})
+target_link_libraries(${PROJECT_NAME} SDL2main SDL2 )
+target_link_libraries(${PROJECT_NAME} SDL2_image SDL2)

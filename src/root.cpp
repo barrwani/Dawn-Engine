@@ -1,12 +1,15 @@
 #include "../include/root.h"
 #include <iostream>
-#include "../include/Collision.h"
 
 
 SDL_Renderer* root::renderer = nullptr;
 SDL_Event root::event;
 
 bool root::isRunning = false;
+
+QuadTree root::colliders(0, 0, 0, 100, 100);
+std::vector<Node*> root::nodes;
+std::unordered_set<std::unique_ptr<Node>> root::children;
 
 SDL_Rect root::camera = { 0,0,1920,1080 };
 
@@ -58,9 +61,14 @@ void root::handleEvents()
     }
 }
 
+//Planning to implement quadtree for collision detection
 void root::update()
 {
-
+    colliders.checkCollisions();
+    for(Node* node : nodes)
+    {
+        node->update();
+    }
 }
 
 
@@ -68,10 +76,10 @@ void root::update()
 void root::render()
 {
     SDL_RenderClear(renderer);
-
-
-
-
+    for(Node* node : nodes)
+    {
+        node->draw();
+    }
     SDL_RenderPresent(renderer);
 
 }

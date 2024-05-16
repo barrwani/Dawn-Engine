@@ -1,0 +1,1 @@
+  -LC:/libs/sdl2/lib/x86  -LC:/libs/sdl2_image/lib/x86  -lSDL2main -lSDL2 -lSDL2_image -lSDL2 -lSDL2_image -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
