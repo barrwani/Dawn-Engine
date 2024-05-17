@@ -15,7 +15,6 @@ struct Animation{
     Animation(int i, int s, int f) {index = i; speed = s; frames = f; }
 };
 
-//TODO: Set up SDL_Image, image transformations
 class Sprite2D : public Node2D{
 public:
     //Constructors, Destructor
@@ -36,7 +35,7 @@ protected:
     SDL_Texture* texture{};
     SDL_Rect srcRect{}, destRect{};
     const char* src;
-    bool visible;
+    bool visible = true;
 
 };
 

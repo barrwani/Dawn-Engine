@@ -105,6 +105,9 @@
 		<Unit filename="C:/Users/asood/dawn-engine/include/Nodes/StaticBody2D.h">
 			<Option target="dawn-engine"/>
 		</Unit>
+		<Unit filename="C:/Users/asood/dawn-engine/include/Player.h">
+			<Option target="dawn-engine"/>
+		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/include/QuadTree.h">
 			<Option target="dawn-engine"/>
 		</Unit>
@@ -133,6 +136,9 @@
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/Nodes/StaticBody2D.cpp">
+			<Option target="dawn-engine"/>
+		</Unit>
+		<Unit filename="C:/Users/asood/dawn-engine/src/Player.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/QuadTree.cpp">

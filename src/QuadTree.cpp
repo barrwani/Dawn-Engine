@@ -87,34 +87,26 @@ void QuadTree::insert(CollisionObject2D *collision_node)
         }
     }
 }
-
-std::vector<CollisionObject2D*> QuadTree::retrieve(CollisionObject2D *collision_node)
-{
-    std::vector<CollisionObject2D*> returnCols;
+void QuadTree::retrieve(std::vector<CollisionObject2D*>& returnCols, CollisionObject2D* collision_node) {
     int index = getIndex(collision_node);
-    if(index !=-1 && !nodes.empty())
-    {
-        std::vector<CollisionObject2D*> childRetCols = nodes[index]->retrieve(collision_node);
-        returnCols.insert(returnCols.end(),childRetCols.begin(),childRetCols.end());
+    if (index != -1 && !nodes.empty()) {
+        nodes[index]->retrieve(returnCols, collision_node);
     }
     returnCols.insert(returnCols.end(), collision_nodes.begin(), collision_nodes.end());
-    return returnCols;
 }
 
 
-void QuadTree::checkCollisions()
-{
-    if(! nodes.empty())
-    {
-        for(const auto& node : nodes)
-        {
+void QuadTree::checkCollisions() {
+    if (!nodes.empty()) {
+        for (const auto& node : nodes) {
             node->checkCollisions();
         }
     }
 
     for (CollisionObject2D* col1 : collision_nodes) {
-        std::vector<CollisionObject2D*> potentialCollisions = retrieve(col1);
-        for (auto col2 : potentialCollisions) {
+        std::vector<CollisionObject2D*> potentialCollisions;
+        retrieve(potentialCollisions, col1);
+        for (CollisionObject2D* col2 : potentialCollisions) {
             if (col1 != col2 && col1->checkCollision(*col2) && col1->collision && col2->collision) {
                 col1->collisionDetected(col2);
                 col2->collisionDetected(col1);

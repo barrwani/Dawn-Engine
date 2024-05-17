@@ -296,6 +296,30 @@ src/Nodes/StaticBody2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.s
 .PHONY : src/Nodes/StaticBody2D.cpp.s
 
+src/Player.obj: src/Player.cpp.obj
+.PHONY : src/Player.obj
+
+# target to build an object file
+src/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.obj
+.PHONY : src/Player.cpp.obj
+
+src/Player.i: src/Player.cpp.i
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
+
+src/Player.s: src/Player.cpp.s
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
 src/QuadTree.obj: src/QuadTree.cpp.obj
 .PHONY : src/QuadTree.obj
 
@@ -422,6 +446,9 @@ help:
 	@echo ... src/Nodes/StaticBody2D.obj
 	@echo ... src/Nodes/StaticBody2D.i
 	@echo ... src/Nodes/StaticBody2D.s
+	@echo ... src/Player.obj
+	@echo ... src/Player.i
+	@echo ... src/Player.s
 	@echo ... src/QuadTree.obj
 	@echo ... src/QuadTree.i
 	@echo ... src/QuadTree.s

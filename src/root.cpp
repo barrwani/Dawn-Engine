@@ -1,15 +1,21 @@
 #include "../include/root.h"
+#include "../include/player.h"
+#include "../include/Nodes/StaticBody2D.h"
 #include <iostream>
 
 
 SDL_Renderer* root::renderer = nullptr;
 SDL_Event root::event;
 
+int prevscene;
+bool root::justEntered = true;
+int root::currentstate = level1;
+
 bool root::isRunning = false;
 
 QuadTree root::colliders(0, 0, 0, 100, 100);
 std::vector<Node*> root::nodes;
-std::unordered_set<std::unique_ptr<Node>> root::children;
+std::vector<std::unique_ptr<Node>> root::children;
 
 SDL_Rect root::camera = { 0,0,1920,1080 };
 
@@ -35,7 +41,6 @@ void root::init(const char *title, int xpos, int ypos, int width, int height, bo
             std::cout << "Window failed to init. Error: " << SDL_GetError() << std::endl;
 
         renderer = SDL_CreateRenderer(window, -1, 0);
-
         if(renderer)
         {
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -46,6 +51,28 @@ void root::init(const char *title, int xpos, int ypos, int width, int height, bo
     } else
         isRunning = false;
 
+}
+
+void root::scene()
+{
+    if(currentstate!= prevscene){justEntered = true;}
+    switch(currentstate)
+    {
+        case level1:
+            if(justEntered)
+            {
+                justEntered = false;
+                std::unique_ptr<Player> player = std::make_unique<Player>(Vector2(400.0f,400.0f), Vector2(32,32),1.0f);
+                nodes.push_back(player.get());
+                colliders.insert(player.get());
+                children.push_back(std::move(player));
+                std::unique_ptr<StaticBody2D> wall = std::make_unique<StaticBody2D>(Vector2(500,200), Vector2(20,200), 1);
+                nodes.push_back(wall.get());
+                colliders.insert(wall.get());
+                children.push_back(std::move(wall));
+            } prevscene = level1;
+
+    }
 }
 
 void root::handleEvents()
@@ -61,7 +88,6 @@ void root::handleEvents()
     }
 }
 
-//Planning to implement quadtree for collision detection
 void root::update()
 {
     colliders.checkCollisions();

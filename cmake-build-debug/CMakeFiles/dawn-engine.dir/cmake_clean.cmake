@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj.d"
   "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj"
   "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj.d"
+  "CMakeFiles/dawn-engine.dir/src/Player.cpp.obj"
+  "CMakeFiles/dawn-engine.dir/src/Player.cpp.obj.d"
   "CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.obj"
   "CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.obj.d"
   "CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj"

@@ -9,7 +9,7 @@ public:
     void clear();
     void insert(CollisionObject2D* collision_node);
     void checkCollisions();
-    std::vector<CollisionObject2D*> retrieve(CollisionObject2D* collision_node);
+    void retrieve(std::vector<CollisionObject2D*>& returnCols, CollisionObject2D* collision_node);
 private:
     int level;
     int x,y,w,h;

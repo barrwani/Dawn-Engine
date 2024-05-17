@@ -1,15 +1,16 @@
 #include "../../include/Nodes/Area2D.h"
 #include "../../include/root.h"
 
-Area2D::Area2D(Vector2 p, Vector2 s)
+Area2D::Area2D(Vector2 p, Vector2 dim, float sc)
 {
     name = "area2D";
+    type = 1;
     position = p;
-    scale = s;
+    scale = sc;
     CollisionShape2D.x = p.x;
     CollisionShape2D.y = p.y;
-    CollisionShape2D.w = s.x;
-    CollisionShape2D.h = s.y;
+    CollisionShape2D.w = dim.x;
+    CollisionShape2D.h = dim.y;
     //Default square for src rect
     srcRect = {0,0,32,32};
     //dest rect set to collider rect
@@ -26,8 +27,8 @@ void Area2D::update()
 {
     destRect.x = static_cast<int>(position.x - root::camera.x);
     destRect.y = static_cast<int>(position.y - root::camera.y);
-    destRect.w = getWidth() * getScale().x;
-    destRect.h = getHeight() * getScale().y;
+    destRect.w = getWidth() * getScale();
+    destRect.h = getHeight() * getScale();
 }
 
 void Area2D::collisionDetected(CollisionObject2D* col)

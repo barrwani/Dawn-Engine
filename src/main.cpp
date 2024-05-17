@@ -25,6 +25,7 @@ int main(int argc, char* argv[])
         root::handleEvents();
         root::update();
         root::render();
+        root::scene();
 
         frameTime = SDL_GetTicks() - frameStart;
 

@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include "../Vector2.h"
 
 class root;
 
@@ -16,16 +17,25 @@ const int MAXGROUPS = 30;
 class Node {
 public:
     std::size_t node_id;
-
+    virtual ~Node()=default;
     //Return a raw pointer to a child node
     // Useful for modifying other nodes children w/o ownership
     Node* get_child(int child_id);
+
+    void set_parent(Node* newparent){parent = newparent;}
     Node* get_parent(){return parent;}
+
     //Returns a vector of raw pointers to all children of a node
     std::unordered_set<Node*> get_children();
 
     virtual void update() = 0;
     virtual void draw() = 0;
+    void setName(char* newname){name = newname;}
+    char* getName(){return name;}
+    void addChild(std::unique_ptr<Node> child)
+    {
+        children.push_back(std::move(child));
+    }
     //Checks if node is in a group
     bool is_in_group(char* groupname);
 
@@ -35,9 +45,12 @@ public:
     //Removes node from group
     bool remove_from_group(char* groupname);
 
+    Vector2 position,direction, dim;
+
+
 protected:
     //unique ptr so parent owns all children, makes memory management easy
-    std::unordered_set<std::unique_ptr<Node>> children;
+    std::vector<std::unique_ptr<Node>> children;
     //if parent==nullptr add node to root child array
     Node* parent;
     char* name;

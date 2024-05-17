@@ -8,8 +8,7 @@ public:
     Area2D();
     ~Area2D();
     void update() override;
-    Area2D(Vector2 position, Vector2 scale);
-    std::string type = "Area2D";
+    Area2D(Vector2 p, Vector2 dim, float sc);
 };
 
 

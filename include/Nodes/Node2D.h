@@ -7,30 +7,26 @@
 //Set up basic node2D methods
 class Node2D : public Node {
 public:
-    Node2D(Vector2 position, Vector2 scale);
+    Node2D(Vector2 position, Vector2 dimension, float scale);
     Node2D();
+    ~Node2D() override =default;
 
     //Transformations
-    Vector2 position,direction,scale,lastPosition;
+    Vector2 position,direction,dim,lastPosition;
     int rotation_degrees;
+    float scale;
 
 
 
     virtual void draw() override;
     virtual void update() override;
-    virtual int getWidth() const {return scale.x;}
-    virtual int getHeight() const {return scale.y;}
-    Vector2 getScale() const {return scale;}
+    virtual int getWidth() const {return dim.x;}
+    virtual int getHeight() const {return dim.y;}
+    float getScale() const {return scale;}
 
 
 protected:
-    //Directions
-    Vector2 UP = Vector2(0, 1);
-    Vector2 DOWN = Vector2(0,-1);
-    Vector2 LEFT = Vector2(-1,0);
-    Vector2 RIGHT = Vector2(1,0);
-    Vector2 ZERO = Vector2(0.0f, 0.0f);
-    int speed;
+    int speed = 3;
 };
 
 

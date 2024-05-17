@@ -8,9 +8,9 @@
 #include "QuadTree.h"
 #include <unordered_set>
 
-//TODO: Implement scene tree
-//TODO: Node_id system
+
 class Node;
+class Player;
 class root {
 public:
     root();
@@ -25,23 +25,29 @@ public:
 
     static void render();
 
+    static void scene();
+
     void clean();
+
+    static void addChild(std::unique_ptr<Node> child) {children.push_back(std::move(child));}
 
     static bool running();
 
     static SDL_Renderer *renderer;
     static SDL_Event event;
     static bool isRunning;
+    static bool justEntered;
     static SDL_Rect camera;
     static std::vector<Node*> nodes;
-    int currentstate;
     static QuadTree colliders;
-    static std::unordered_set<std::unique_ptr<Node>> children;
+    static std::vector<std::unique_ptr<Node>> children;
     enum gameState{
     menu,
     level1,
     //etc
     };
+    static int currentstate;
+
 
 private:
     int cnt = 0;

@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/asood/dawn-engine/src/Nodes/Node2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/Node2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/Node2D.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Nodes/Sprite2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Nodes/StaticBody2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj.d"
+  "C:/Users/asood/dawn-engine/src/Player.cpp" "CMakeFiles/dawn-engine.dir/src/Player.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Player.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/QuadTree.cpp" "CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Vector2.cpp" "CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/main.cpp" "CMakeFiles/dawn-engine.dir/src/main.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/main.cpp.obj.d"
