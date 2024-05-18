@@ -36,6 +36,7 @@ public:
     void addCollisionLayer(int layer);
     void removeCollisionLayer(int layer);
 
+
     int getType()  const {return type;}
 
     int getWidth() const override {return CollisionShape2D.w;}

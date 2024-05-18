@@ -776,6 +776,7 @@ CMakeFiles/dawn-engine.dir/src/Nodes/Node.cpp.obj: C:/Users/asood/dawn-engine/sr
   C:/libs/sdl2/include/SDL_video.h \
   C:/libs/sdl2/include/begin_code.h \
   C:/libs/sdl2/include/close_code.h \
+  C:/libs/sdl2_image/include/SDL_image.h \
   C:/MinGW/include/_mingw.h \
   C:/MinGW/include/ctype.h \
   C:/MinGW/include/direct.h \
@@ -1006,6 +1007,7 @@ CMakeFiles/dawn-engine.dir/src/Nodes/Node2D.cpp.obj: C:/Users/asood/dawn-engine/
   C:/libs/sdl2/include/SDL_video.h \
   C:/libs/sdl2/include/begin_code.h \
   C:/libs/sdl2/include/close_code.h \
+  C:/libs/sdl2_image/include/SDL_image.h \
   C:/MinGW/include/_mingw.h \
   C:/MinGW/include/ctype.h \
   C:/MinGW/include/direct.h \

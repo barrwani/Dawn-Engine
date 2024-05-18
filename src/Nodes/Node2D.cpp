@@ -26,13 +26,21 @@ void Node2D::draw()
 
 }
 
+void Node2D::updateChildren()
+{
+    for(auto& child : children)
+    {
+        if(!child){continue;}
+        child->setPosition(position);
+        child->setDirection(direction);
+        child->update();
+    }
+}
+
 void Node2D::update()
 {
     //Normalise the direction vector, same speed all directions
     direction.Normalise();
-
-    //Set previous position, used for collision physics
-    lastPosition = position;
 
     //Move the entity
     position.x += direction.x * speed;

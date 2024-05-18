@@ -6,6 +6,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include <SDL_image.h>
 #include "../Vector2.h"
 
 class root;
@@ -18,9 +19,7 @@ class Node {
 public:
     std::size_t node_id;
     virtual ~Node()=default;
-    //Return a raw pointer to a child node
-    // Useful for modifying other nodes children w/o ownership
-    Node* get_child(int child_id);
+
 
     void set_parent(Node* newparent){parent = newparent;}
     Node* get_parent(){return parent;}
@@ -30,8 +29,18 @@ public:
 
     virtual void update() = 0;
     virtual void draw() = 0;
-    void setName(char* newname){name = newname;}
-    char* getName(){return name;}
+    void setName(std::string newname){name = newname;}
+
+
+    virtual Vector2 getPosition()=0;
+    virtual Vector2 getDirection()=0;
+    virtual Vector2 getDimension()=0;
+
+    virtual void setPosition(Vector2 newpos)=0;
+    virtual void setDirection(Vector2 newdir)=0;
+    virtual void setDimension(Vector2 newdim)=0;
+
+    std::string getName(){return name;}
     void addChild(std::unique_ptr<Node> child)
     {
         children.push_back(std::move(child));
@@ -45,17 +54,18 @@ public:
     //Removes node from group
     bool remove_from_group(char* groupname);
 
-    Vector2 position,direction, dim;
 
 
+//unique ptr so parent owns all children, makes memory management easy
+std::vector<std::unique_ptr<Node>> children;
 protected:
-    //unique ptr so parent owns all children, makes memory management easy
-    std::vector<std::unique_ptr<Node>> children;
     //if parent==nullptr add node to root child array
     Node* parent;
-    char* name;
+    std::string name;
     std::unordered_set<char*> groups;
     bool collision = false;
+    Vector2 position,direction, dim;
+
 };
 
 

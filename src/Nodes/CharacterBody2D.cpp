@@ -33,16 +33,14 @@ void CharacterBody2D::update()
     for(auto& child : children)
     {
         child->update();
-        child->position = position;
-        child->direction = direction;
+        child->setPosition(position);
+        child->setDirection(direction);
     }
 }
 
 void CharacterBody2D::updatePosition()
 {
     direction.Normalise();
-
-    lastPosition = position;
 
     //Move the entity
     position.x += direction.x * speed;

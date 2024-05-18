@@ -1,16 +1,7 @@
 
 #include "../../include/Nodes/Node.h"
 
-Node* Node::get_child(int child_id)
-{
-    for(auto& child : children)
-    {
-        if (child->node_id == child_id)
-        {
-            return child.get();
-        }
-    }
-}
+
 
 std::unordered_set<Node*> Node::get_children()
 {

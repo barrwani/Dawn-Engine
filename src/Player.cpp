@@ -7,24 +7,19 @@ Player::Player(Vector2 position, Vector2 dim, float scale) : CharacterBody2D(pos
     visiblecollision = true;
     texture = LoadTexture("assets/coltex.png");
     std::unique_ptr<Sprite2D> sprite2d = std::make_unique<Sprite2D>("assets/player.png",dim.x, dim.y);
-    sprite = sprite2d.get();
-    sprite->position = position;
-    sprite->set_parent(this);
+    Sprite2D* rawSpritePtr = sprite2d.get();
+    sprite = rawSpritePtr;
+    sprite2d->set_parent(this);
     addChild(std::move(sprite2d));
-    root::nodes.push_back(sprite);
+    root::nodes.push_back(rawSpritePtr);
 }
+
 void Player::update()
 {
     handleInput();
+    updateChildren();
     updateCollisionShape2D();
     updatePosition();
-
-    for(auto& child : children)
-    {
-        child->update();
-        child->position = position;
-        child->direction = direction;
-    }
 }
 
 void Player::draw()

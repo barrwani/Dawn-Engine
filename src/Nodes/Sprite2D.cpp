@@ -4,6 +4,7 @@
 
 Sprite2D::Sprite2D(const char* fileName)
 {
+    name = "Sprite2D";
     position = Vector2(0,0);
     texture = LoadTexture(fileName);
     srcRect.x = srcRect.y = 0;
@@ -13,6 +14,7 @@ Sprite2D::Sprite2D(const char* fileName)
 }
 Sprite2D::Sprite2D(const char* fileName, int w, int h)
 {
+    name = "Sprite2D";
     position = Vector2(0,0);
     texture = LoadTexture(fileName);
     srcRect.x = srcRect.y = 0;
@@ -35,11 +37,7 @@ void Sprite2D::draw()
 
 void Sprite2D::update()
 {
-    parent->position = position;
-    std::cout << parent->getName() << std::endl;
-    position.x = static_cast<int>(position.x - root::camera.x);
     destRect.x = position.x;
-    position.y = static_cast<int>(position.y - root::camera.y);
     destRect.y = position.y;
     destRect.w = getWidth() * getScale();
     destRect.h = getHeight() * getScale();

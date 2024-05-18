@@ -32,8 +32,8 @@ public:
 
 
 protected:
-    SDL_Texture* texture{};
-    SDL_Rect srcRect{}, destRect{};
+    SDL_Texture* texture;
+    SDL_Rect srcRect, destRect;
     const char* src;
     bool visible = true;
 

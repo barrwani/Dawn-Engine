@@ -62,11 +62,16 @@ void root::scene()
             if(justEntered)
             {
                 justEntered = false;
-                std::unique_ptr<Player> player = std::make_unique<Player>(Vector2(400.0f,400.0f), Vector2(32,32),1.0f);
+                std::unique_ptr<Player> player = std::make_unique<Player>(Vector2(400.0f,400.0f), Vector2(32.0f,32.0f),1.0f);
                 nodes.push_back(player.get());
+                for(auto& child : player->children)
+                {
+                    nodes.push_back(child.get());
+                }
                 colliders.insert(player.get());
                 children.push_back(std::move(player));
-                std::unique_ptr<StaticBody2D> wall = std::make_unique<StaticBody2D>(Vector2(500,200), Vector2(20,200), 1);
+
+                std::unique_ptr<StaticBody2D> wall = std::make_unique<StaticBody2D>(Vector2(200.0f,500.0f), Vector2(500.0f,20.0f), 1.0f);
                 nodes.push_back(wall.get());
                 colliders.insert(wall.get());
                 children.push_back(std::move(wall));

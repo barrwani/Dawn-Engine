@@ -12,11 +12,19 @@ public:
     ~Node2D() override =default;
 
     //Transformations
-    Vector2 position,direction,dim,lastPosition;
     int rotation_degrees;
     float scale;
 
+    Vector2 getPosition() override{return position;}
+    Vector2 getDirection() override{return direction;}
+    Vector2 getDimension() override{return dim;}
 
+
+    void updateChildren();
+
+    void setPosition(Vector2 newpos) override{position = newpos;}
+    void setDirection(Vector2 newdir) override{direction = newdir;}
+    void setDimension(Vector2 newdim) override{dim = newdim;}
 
     virtual void draw() override;
     virtual void update() override;
@@ -27,6 +35,8 @@ public:
 
 protected:
     int speed = 3;
+    Vector2 position,direction, dim;
+
 };
 
 
