@@ -3,20 +3,24 @@
 Dawn Engine is a work-in-progress C++ OOP-based 2D Game Engine inspired by Godot, utilising SDL2 for graphics.
 
 ## Key features
+Complete:
 - Node-based tree for hierarchy organisation and inheritance
 - Quadtree data structure for collision detection
 - `std::unique_ptr` for easy garbage collection of nodes and children
 - Node groups
 
-WIP/Planning:
-- Impulse-based collision resolution (WIP)
-- Asset management system (Planning)
-- Sprite animation system (WIP)
-- Collision layers (WIP)
-- Basic camera system (WIP)
-- Singleton (Planning)
-- Tilemap System (Planning)
-- Node re-parenting (Planning)
+WIP:
+- Impulse-based collision resolution 
+- Sprite animation system 
+- Collision layers 
+- Basic camera system 
+
+Planning:
+- Asset management system 
+- Singleton 
+- Tilemap System 
+- Node re-parenting
+- `queue_free()` for abstracted node deletion
 
 
 
