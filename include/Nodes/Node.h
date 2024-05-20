@@ -7,14 +7,13 @@
 #include <memory>
 #include <algorithm>
 #include <SDL_image.h>
-#include "../Vector2.h"
+#include "../base/Vector2.h"
 
 class root;
 
 
 const int MAXGROUPS = 30;
 
-//TODO: Implement scene tree methods
 class Node {
 public:
     std::size_t node_id;
@@ -46,13 +45,13 @@ public:
         children.push_back(std::move(child));
     }
     //Checks if node is in a group
-    bool is_in_group(char* groupname);
+    bool is_in_group(std::string groupname);
 
     //Adds node to group
-    void add_to_group(char* groupname);
+    void add_to_group(std::string groupname);
 
     //Removes node from group
-    bool remove_from_group(char* groupname);
+    bool remove_from_group(std::string groupname);
 
 
 
@@ -62,7 +61,7 @@ protected:
     //if parent==nullptr add node to root child array
     Node* parent;
     std::string name;
-    std::unordered_set<char*> groups;
+    std::unordered_set<std::string> groups;
     bool collision = false;
     Vector2 position,direction, dim;
 

@@ -13,12 +13,12 @@ std::unordered_set<Node*> Node::get_children()
     return rawchildren;
 }
 
-bool Node::is_in_group(char* groupname)
+bool Node::is_in_group(std::string groupname)
 {
     return groups.find(groupname) != groups.end();
 }
 
-void Node::add_to_group(char *groupname)
+void Node::add_to_group(std::string groupname)
 {
     if(groups.size() < MAXGROUPS)
         groups.insert(groupname);
@@ -26,7 +26,7 @@ void Node::add_to_group(char *groupname)
         std::cerr << name << " is in too many groups" << std::endl;
 }
 
-bool Node::remove_from_group(char* groupname)
+bool Node::remove_from_group(std::string groupname)
 {
     return groups.erase(groupname);
 }

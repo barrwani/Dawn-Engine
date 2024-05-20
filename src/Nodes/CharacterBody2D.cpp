@@ -1,5 +1,5 @@
 #include "../../include/Nodes/CharacterBody2D.h"
-#include "../../include/root.h"
+#include "../../include/base/root.h"
 
 
 CharacterBody2D::CharacterBody2D(Vector2 pos, Vector2 dim, float sc)
@@ -67,10 +67,7 @@ void CharacterBody2D::collisionDetected(CollisionObject2D* col)
         int displacementY = fromTop ? -overlapTop : overlapBottom;
         position.y += displacementY;
         CollisionShape2D.y += displacementY;
-        if (!fromTop && overlapBottom == minOverlapY) {
-            onFloor = true;
-        }
-    }
 
+    }
 }
 

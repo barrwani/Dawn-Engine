@@ -1,4 +1,4 @@
-#include "../include/Vector2.h"
+#include "../../include/base/Vector2.h"
 
 Vector2::Vector2()
 {
@@ -54,24 +54,28 @@ void Vector2::Normalise()
     }
 }
 
-Vector2 &operator+(Vector2 &v1, Vector2 &v2)
+Vector2 &operator+(const Vector2 &v1, const Vector2 &v2)
 {
-    return v1.Add(v2);
+    Vector2 result = v1;
+    return result.Add(v2);
 }
 
-Vector2 &operator-(Vector2 &v1, Vector2 &v2)
+Vector2 &operator-(const Vector2 &v1, const Vector2 &v2)
 {
-    return v1.Subtract(v2);
+    Vector2 result = v1;
+    return result.Subtract(v2);
 }
 
-Vector2 &operator*(Vector2 &v1, Vector2 &v2)
+Vector2 &operator*(const Vector2 &v1, const Vector2 &v2)
 {
-    return v1.Multiply(v2);
+    Vector2 result = v1;
+    return result.Multiply(v2);
 }
 
-Vector2 &operator/(Vector2 &v1, Vector2 &v2)
+Vector2 &operator/(const Vector2 &v1, const Vector2 &v2)
 {
-    return v1.Divide(v2);
+    Vector2 result = v1;
+    return result.Divide(v2);
 }
 
 Vector2 Vector2::operator*(const int& i)
@@ -81,13 +85,18 @@ Vector2 Vector2::operator*(const int& i)
     return *this;
 }
 
+bool Vector2::operator!=(const Vector2 &vec) const
+{
+    return (x != vec.x || y != vec.y);
+}
 
-Vector2 operator/(Vector2& v1, int v2)
+
+Vector2 operator/(const Vector2& v1, const int v2)
 {
     return {v1.x  / v2, v1.y / v2};
 }
 
-Vector2 operator/(int v2, Vector2& v1)
+Vector2 operator/(const int v2, const Vector2& v1)
 {
     return { v2 / v1.x, v2 / v1.y};
 }

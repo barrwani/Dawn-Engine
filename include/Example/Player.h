@@ -1,6 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "Nodes/CharacterBody2D.h"
+#include "../Nodes/CharacterBody2D.h"
 class Sprite2D;
 
 class Player : public CharacterBody2D {
@@ -13,8 +13,9 @@ public:
     void update(float delta) override;
     void jump();
     int gravity = 5;
+    int speed = 10;
     bool falling;
-    bool eightway = false;
+    bool eightway = true;
     bool jumping;
     std::string type = "CharacterBody2D";
     void draw() override;

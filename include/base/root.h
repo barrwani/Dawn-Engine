@@ -3,7 +3,7 @@
 
 
 #include <SDL.h>
-#include "Nodes/Node.h"
+#include "../Nodes/Node.h"
 #include <vector>
 #include "QuadTree.h"
 #include <unordered_set>

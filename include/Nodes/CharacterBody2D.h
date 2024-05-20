@@ -9,7 +9,7 @@ public:
     bool isOnFloor() const;
     CharacterBody2D(Vector2 position, Vector2 dimension, float scale);
     ~CharacterBody2D();
-    bool onFloor;
+    bool onFloor = true;
     Vector2 velocity;
 
 };

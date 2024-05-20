@@ -1,4 +1,4 @@
-#include "../../include/root.h"
+#include "../../include/base/root.h"
 #include "../../include/Nodes/CollisionObject2D.h"
 
 CollisionObject2D::CollisionObject2D(Vector2 position, Vector2 scale)

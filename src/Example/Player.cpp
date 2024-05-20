@@ -1,6 +1,6 @@
-#include "../include/Player.h"
-#include "../include/root.h"
-#include "../include/Nodes/Sprite2D.h"
+#include "../../include/Example/Player.h"
+#include "../../include/base/root.h"
+#include "../../include/Nodes/Sprite2D.h"
 
 Player::Player(Vector2 position, Vector2 dim, float scale) : CharacterBody2D(position, dim, scale)
 {
@@ -18,7 +18,7 @@ void Player::jump()
 {
     if(isOnFloor() && !jumping)
     {
-        velocity.y = -15;
+        velocity.y = -10;
         jumping = true;
     }
 }
@@ -33,7 +33,6 @@ void Player::update(float delta)
         velocity.y = 0;
     }
     handleInput();
-    applyGravity(delta);
     updatePosition(delta);
     updateChildren(delta);
     updateCollisionShape2D();
@@ -45,7 +44,13 @@ void Player::updatePosition(float delta)
 
     //Move the entity
     position.x += direction.x * speed;
-    position.y +=velocity.y;
+    if(!eightway)
+    {
+        applyGravity(delta);
+        position.y +=velocity.y;
+    }else{
+        position.y += direction.y * speed;
+    }
     if (isOnFloor()) {
         velocity.y = 0;
         jumping = false;
@@ -76,6 +81,7 @@ void Player::applyGravity(float delta)
 void Player::handleInput()
 {
     direction.x = 0;
+
     direction.y = 0;
 
     if(eightway) {
@@ -112,7 +118,7 @@ void Player::handleInput()
         }
     }else
     {
-        if (keystates[SDL_SCANCODE_UP])
+        if (keystates[SDL_SCANCODE_UP] && !jumping)
         {
             jump();
         }

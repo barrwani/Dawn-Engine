@@ -1,6 +1,6 @@
-#include "../include/root.h"
-#include "../include/player.h"
-#include "../include/Nodes/StaticBody2D.h"
+#include "../../include/base/root.h"
+#include "../../include/Example/Player.h"
+#include "../../include/Nodes/StaticBody2D.h"
 #include <iostream>
 
 
@@ -68,12 +68,14 @@ void root::scene(float delta)
                 {
                     nodes.push_back(child.get());
                 }
-                children.push_back(std::move(player));
+                addChild(std::move(player));
+
 
                 std::unique_ptr<StaticBody2D> wall = std::make_unique<StaticBody2D>(Vector2(200.0f,500.0f), Vector2(500.0f,20.0f), 1.0f);
                 nodes.push_back(wall.get());
-                children.push_back(std::move(wall));
-            } prevscene = level1;
+                addChild(std::move(wall));
+            }
+            prevscene = level1;
 
     }
 }
@@ -116,6 +118,7 @@ void root::render(float delta)
 
 void root::clean()
 {
+    colliders.clear();
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();

@@ -1,6 +1,6 @@
 #ifndef QUADTREE_H
 #define QUADTREE_H
-#include "Nodes/CollisionObject2D.h"
+#include "../Nodes/CollisionObject2D.h"
 
 class CollisionObject2D;
 class QuadTree {

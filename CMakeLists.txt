@@ -14,17 +14,17 @@ include_directories(${SDL2_IMAGES_DIR})
 link_directories(${SDL2_IMAGES_LIB_DIR})
 
 
-add_executable(dawn-engine src/main.cpp
+add_executable(dawn-engine src/base/main.cpp
         src/Nodes/Node2D.cpp
         include/Nodes/Node2D.h
         src/Nodes/Node.cpp
         include/Nodes/Node.h
-        src/root.cpp
-        include/root.h
+        src/base/root.cpp
+        include/base/root.h
         src/Nodes/CollisionObject2D.cpp
         include/Nodes/CollisionObject2D.h
-        src/Vector2.cpp
-        include/Vector2.h
+        src/base/Vector2.cpp
+        include/base/Vector2.h
         src/Nodes/Sprite2D.cpp
         include/Nodes/Sprite2D.h
         src/Nodes/Area2D.cpp
@@ -33,10 +33,10 @@ add_executable(dawn-engine src/main.cpp
         include/Nodes/StaticBody2D.h
         src/Nodes/CharacterBody2D.cpp
         include/Nodes/CharacterBody2D.h
-        src/QuadTree.cpp
-        include/QuadTree.h
-        src/Player.cpp
-        include/Player.h
+        src/base/QuadTree.cpp
+        include/base/QuadTree.h
+        src/Example/Player.cpp
+        include/Example/Player.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2 )

@@ -1,4 +1,4 @@
-#include "../include/QuadTree.h"
+#include "../../include/base/QuadTree.h"
 
 QuadTree::QuadTree(int level, int x, int y, int w, int h) : level(level), x(x), y(y), w(w), h(h)
 {}
