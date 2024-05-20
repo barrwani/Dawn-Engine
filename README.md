@@ -6,7 +6,7 @@ Since this is a solo project intended for personal use, branching and versioning
 
 ## Key features
 Complete:
-- Node-based tree for hierarchy organisation and inheritance
+- Node-based scene tree for hierarchy organisation and inheritance
 - Quadtree data structure for collision detection
 - Nodes all in a vector of `std::unique_ptr` owned by their parent for consistent memory management
 - Node groups
