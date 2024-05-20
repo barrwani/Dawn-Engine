@@ -1,6 +1,7 @@
 # Dawn Engine
 
-Dawn Engine is a work-in-progress C++ OOP-based 2D Game Engine inspired by Godot, utilising SDL2 for graphics. Since this is a solo project intended for personal use, branching and versioning is not utilised. 
+Dawn Engine is a work-in-progress 2D OOP-based Game Engine, utilising C++ and SDL2. Dawn Engine is inspired by Godot.
+Since this is a solo project intended for personal use, branching and versioning is not utilised. 
 
 ## Key features
 Complete:
