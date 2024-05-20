@@ -5,10 +5,13 @@
 class CharacterBody2D : public CollisionObject2D {
 public:
     void collisionDetected(CollisionObject2D* col) override;
-    virtual void update() override;
-    void updatePosition();
+    virtual void update(float delta) override;
+    bool isOnFloor() const;
     CharacterBody2D(Vector2 position, Vector2 dimension, float scale);
     ~CharacterBody2D();
+    bool onFloor;
+    Vector2 velocity;
+
 };
 
 

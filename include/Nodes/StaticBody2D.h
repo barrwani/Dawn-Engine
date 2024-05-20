@@ -5,7 +5,7 @@
 class StaticBody2D : public CollisionObject2D {
 public:
     void collisionDetected(CollisionObject2D* col) override;
-    void update() override;
+    void update(float delta) override;
     StaticBody2D(Vector2 position, Vector2 dimension, float scale);
     ~StaticBody2D();
 };

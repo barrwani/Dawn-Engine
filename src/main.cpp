@@ -18,14 +18,14 @@ int main(int argc, char* argv[])
     rootscene->init("Dawn Engine", SDL_WINDOWPOS_CENTERED,
                SDL_WINDOWPOS_CENTERED, 1024, 600, false);
 
-
+    float delta = 0.0f;
     while(root::running())
     {
         frameStart = SDL_GetTicks();
-        root::handleEvents();
-        root::update();
-        root::render();
-        root::scene();
+        root::handleEvents(delta);
+        root::update(delta);
+        root::render(delta);
+        root::scene(delta);
 
         frameTime = SDL_GetTicks() - frameStart;
 
@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
         {
             SDL_Delay(frameDelay - frameTime);
         }
+        delta = frameTime / 1000.0f;
     }
     rootscene->clean();
     return 0;

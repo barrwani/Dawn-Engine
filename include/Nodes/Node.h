@@ -27,7 +27,7 @@ public:
     //Returns a vector of raw pointers to all children of a node
     std::unordered_set<Node*> get_children();
 
-    virtual void update() = 0;
+    virtual void update(float delta) = 0;
     virtual void draw() = 0;
     void setName(std::string newname){name = newname;}
 

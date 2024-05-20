@@ -7,7 +7,7 @@ public:
     void collisionDetected(CollisionObject2D* col) override;
     Area2D();
     ~Area2D();
-    void update() override;
+    void update(float delta) override;
     Area2D(Vector2 p, Vector2 dim, float sc);
 };
 

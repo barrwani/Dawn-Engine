@@ -4,8 +4,9 @@
 
 CharacterBody2D::CharacterBody2D(Vector2 pos, Vector2 dim, float sc)
 {
+    root::colliders.insert(this);
     type = 2;
-    name = "characterbody2D";
+    name = "CharacterBody2D";
     position = pos;
     scale = sc;
     CollisionShape2D.x = pos.x;
@@ -20,35 +21,32 @@ CharacterBody2D::CharacterBody2D(Vector2 pos, Vector2 dim, float sc)
 
 CharacterBody2D::~CharacterBody2D()
 {
+    SDL_DestroyTexture(texture);
+    root::colliders.remove(this);
     //make sure to destroy coltex
     //trivial for now
 }
 
-void CharacterBody2D::update()
+void CharacterBody2D::update(float delta)
 {
     updateCollisionShape2D();
 
-    updatePosition();
 
     for(auto& child : children)
     {
-        child->update();
+        child->update(delta);
         child->setPosition(position);
         child->setDirection(direction);
     }
 }
 
-void CharacterBody2D::updatePosition()
-{
-    direction.Normalise();
+bool CharacterBody2D::isOnFloor() const {return onFloor;}
 
-    //Move the entity
-    position.x += direction.x * speed;
-    position.y += direction.y * speed;
 
-}
+
 void CharacterBody2D::collisionDetected(CollisionObject2D* col)
 {
+    colliding = true;
     int overlapLeft = (CollisionShape2D.x + CollisionShape2D.w) - col->CollisionShape2D.x;
     int overlapRight = (col->CollisionShape2D.x + col->CollisionShape2D.w) - CollisionShape2D.x;
     int overlapTop = (CollisionShape2D.y + CollisionShape2D.h) - col->CollisionShape2D.y;
@@ -69,6 +67,10 @@ void CharacterBody2D::collisionDetected(CollisionObject2D* col)
         int displacementY = fromTop ? -overlapTop : overlapBottom;
         position.y += displacementY;
         CollisionShape2D.y += displacementY;
+        if (!fromTop && overlapBottom == minOverlapY) {
+            onFloor = true;
+        }
     }
+
 }
 

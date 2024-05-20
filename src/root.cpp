@@ -53,7 +53,7 @@ void root::init(const char *title, int xpos, int ypos, int width, int height, bo
 
 }
 
-void root::scene()
+void root::scene(float delta)
 {
     if(currentstate!= prevscene){justEntered = true;}
     switch(currentstate)
@@ -68,19 +68,17 @@ void root::scene()
                 {
                     nodes.push_back(child.get());
                 }
-                colliders.insert(player.get());
                 children.push_back(std::move(player));
 
                 std::unique_ptr<StaticBody2D> wall = std::make_unique<StaticBody2D>(Vector2(200.0f,500.0f), Vector2(500.0f,20.0f), 1.0f);
                 nodes.push_back(wall.get());
-                colliders.insert(wall.get());
                 children.push_back(std::move(wall));
             } prevscene = level1;
 
     }
 }
 
-void root::handleEvents()
+void root::handleEvents(float delta)
 {
     SDL_PollEvent(&event);
     switch (event.type)
@@ -93,18 +91,18 @@ void root::handleEvents()
     }
 }
 
-void root::update()
+void root::update(float delta)
 {
     colliders.checkCollisions();
     for(Node* node : nodes)
     {
-        node->update();
+        node->update(delta);
     }
 }
 
 
 
-void root::render()
+void root::render(float delta)
 {
     SDL_RenderClear(renderer);
     for(Node* node : nodes)

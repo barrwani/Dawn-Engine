@@ -20,14 +20,14 @@ public:
     Vector2 getDimension() override{return dim;}
 
 
-    void updateChildren();
+    void updateChildren(float delta);
 
     void setPosition(Vector2 newpos) override{position = newpos;}
     void setDirection(Vector2 newdir) override{direction = newdir;}
     void setDimension(Vector2 newdim) override{dim = newdim;}
 
     virtual void draw() override;
-    virtual void update() override;
+    virtual void update(float delta) override;
     virtual int getWidth() const {return dim.x;}
     virtual int getHeight() const {return dim.y;}
     float getScale() const {return scale;}

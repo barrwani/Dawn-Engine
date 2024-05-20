@@ -35,7 +35,7 @@ void Sprite2D::draw()
 }
 
 
-void Sprite2D::update()
+void Sprite2D::update(float delta)
 {
     destRect.x = position.x;
     destRect.y = position.y;

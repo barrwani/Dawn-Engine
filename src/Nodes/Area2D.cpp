@@ -3,6 +3,7 @@
 
 Area2D::Area2D(Vector2 p, Vector2 dim, float sc)
 {
+    root::colliders.insert(this);
     name = "area2D";
     type = 1;
     position = p;
@@ -19,12 +20,15 @@ Area2D::Area2D(Vector2 p, Vector2 dim, float sc)
 
 Area2D::~Area2D()
 {
+    root::colliders.remove(this);
+    SDL_DestroyTexture(texture);
     //make sure to destroy coltex
     //trivial for now
 }
 
-void Area2D::update()
+void Area2D::update(float delta)
 {
+    colliding = false;
     destRect.x = static_cast<int>(position.x - root::camera.x);
     destRect.y = static_cast<int>(position.y - root::camera.y);
     destRect.w = getWidth() * getScale();
@@ -33,6 +37,7 @@ void Area2D::update()
 
 void Area2D::collisionDetected(CollisionObject2D* col)
 {
+    colliding = true;
 
 }
 

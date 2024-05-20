@@ -26,7 +26,7 @@ public:
     std::map<const char*, Animation> animations;
     SDL_RendererFlip spriteFlip = SDL_FLIP_NONE;
 
-    void update() override;
+    void update(float delta) override;
     void draw() override;
     int currentFrame = 0;
 

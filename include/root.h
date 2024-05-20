@@ -19,13 +19,13 @@ public:
 
     void init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen);
 
-    static void handleEvents();
+    static void handleEvents(float delta);
 
-    static void update();
+    static void update(float delta);
 
-    static void render();
+    static void render(float delta);
 
-    static void scene();
+    static void scene(float delta);
 
     void clean();
 

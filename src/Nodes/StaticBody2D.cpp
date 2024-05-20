@@ -3,6 +3,7 @@
 
 StaticBody2D::StaticBody2D(Vector2 p, Vector2 d, float sc)
 {
+    root::colliders.insert(this);
     scale = sc;
     type = 0;
     visiblecollision = true;
@@ -22,11 +23,13 @@ StaticBody2D::StaticBody2D(Vector2 p, Vector2 d, float sc)
 
 StaticBody2D::~StaticBody2D()
 {
+    root::colliders.remove(this);
+    SDL_DestroyTexture(texture);
     //make sure to destroy coltex
     //trivial for now
 }
 
-void StaticBody2D::update()
+void StaticBody2D::update(float delta)
 {
     destRect.x = static_cast<int>(position.x - root::camera.x);
     destRect.y = static_cast<int>(position.y - root::camera.y);

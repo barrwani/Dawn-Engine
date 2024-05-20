@@ -26,18 +26,18 @@ void Node2D::draw()
 
 }
 
-void Node2D::updateChildren()
+void Node2D::updateChildren(float delta)
 {
     for(auto& child : children)
     {
         if(!child){continue;}
         child->setPosition(position);
         child->setDirection(direction);
-        child->update();
+        child->update(delta);
     }
 }
 
-void Node2D::update()
+void Node2D::update(float delta)
 {
     //Normalise the direction vector, same speed all directions
     direction.Normalise();

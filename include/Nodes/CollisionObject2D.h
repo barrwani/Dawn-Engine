@@ -14,7 +14,7 @@ class CollisionObject2D : public Node2D {
 public:
     CollisionObject2D();
     CollisionObject2D(Vector2 position, Vector2 scale);
-    virtual void update() override;
+    virtual void update(float delta) override;
     virtual void draw() override;
 
     void updateCollisionShape2D();
@@ -51,6 +51,7 @@ public:
 protected:
     //0 is static, 1 is area, 2 is character
     int type;
+    bool colliding = false;
     SDL_Rect srcRect, destRect;
     std::map<int,bool> collisionlayers;
     bool visiblecollision = false;

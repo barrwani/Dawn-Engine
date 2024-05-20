@@ -64,7 +64,7 @@ bool CollisionObject2D::checkCollision(const CollisionObject2D &other)
 }
 
 
-void CollisionObject2D::update()
+void CollisionObject2D::update(float delta)
 {
     destRect = CollisionShape2D;
 }

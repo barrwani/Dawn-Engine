@@ -21,6 +21,48 @@ void QuadTree::split()
     nodes.push_back(std::make_unique<QuadTree>(level + 1, xMid, yMid, subWidth, subHeight));
 }
 
+void QuadTree::remove(CollisionObject2D* collision_node)
+{
+    // Check if the node has child nodes
+    if (!nodes.empty())
+    {
+        int index = getIndex(collision_node);
+        if (index != -1)
+        {
+            // Try to remove from the appropriate child node
+            nodes[index]->remove(collision_node);
+            return;
+        }
+    }
+
+    // Try to remove from the current node
+    auto iter = std::find(collision_nodes.begin(), collision_nodes.end(), collision_node);
+    if (iter != collision_nodes.end())
+    {
+        collision_nodes.erase(iter);
+    }
+
+    // Optionally, you can merge child nodes if they become empty to keep the tree balanced
+    if (!nodes.empty())
+    {
+        bool allChildrenEmpty = true;
+        for (const auto& node : nodes)
+        {
+            if (!node->collision_nodes.empty() || !node->nodes.empty())
+            {
+                allChildrenEmpty = false;
+                break;
+            }
+        }
+
+        if (allChildrenEmpty)
+        {
+            nodes.clear();
+        }
+    }
+}
+
+
 int QuadTree::getIndex(CollisionObject2D *collision_node)
 {
     int index = -1;

@@ -8,7 +8,14 @@ public:
     Player(Vector2 position, Vector2 dim, float scale) ;
     ~Player() override= default;
     void handleInput();
-    void update() override;
+    void applyGravity(float delta);
+    void updatePosition(float delta);
+    void update(float delta) override;
+    void jump();
+    int gravity = 5;
+    bool falling;
+    bool eightway = false;
+    bool jumping;
     std::string type = "CharacterBody2D";
     void draw() override;
 private:
