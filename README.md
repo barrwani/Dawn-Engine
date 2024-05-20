@@ -1,3 +1,37 @@
 # Dawn Engine
 
-Dawn Engine is a work-in-progress C++ SDL2-based Game Engine inspired by Godot. 
+Dawn Engine is a work-in-progress C++ OOP-based 2D Game Engine inspired by Godot, utilising SDL2 for graphics.
+
+## Key features
+- Node-based tree for hierarchy organisation and inheritance
+- Quadtree data structure for collision detection
+- `std::unique_ptr` for easy garbage collection of nodes and children
+- Node groups
+
+WIP/Planning:
+- Impulse-based collision resolution (WIP)
+- Asset management system (Planning)
+- Sprite animation system (WIP)
+- Collision layers (WIP)
+- Basic camera system (WIP)
+- Singleton (Planning)
+- Tilemap System (Planning)
+- Node re-parenting (Planning)
+
+
+
+## Base structure
+The nodes are layed out in a hierarchical scene graph - essentially a linked tree.
+- Each node holds a pointer to its parent (`Node* parent`) and a vector of unique pointers of it's children (`std::vector<std::unique_ptr<Node>>`)
+- Nodes have `update(delta)` and `draw(delta)` methods which are called recursively on all children every delta
+- Node initialization and child node instancing (that is needed when the node is first instanced) is described in the constructor
+- Nodes who's parents are the scene root have `nullptr` set as their parent, and are added to the root's children vector. 
+  - This ensures that when the root is destroyed the children are properly managed, although this approach may be tweaked based on game state.
+- Quadtree that stores all collidable objects and checks for collisions every delta
+- Dynamic allocation occurs at the beginning of a scene instance
+
+### Nodes
+
+Nodes are, much like in Godot, inherited from a base Node class and further derived into `Node2D -> {CollisionObject2D,Sprite2D}` and `CollisionObject2D -> {Area2D, CharacterBody2D, StaticBody2D}`. 
+
+Nodes are basically objects, and can be seen as subtrees, inheriting as many children as they want. When a node is deleted, all of it's child nodes recurisvely destroy themselves (smart pointers). Nodes can be deleted by deallocating from the parent's `children` vector (same in root). 
