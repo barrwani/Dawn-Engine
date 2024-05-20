@@ -1,6 +1,6 @@
 # Dawn Engine
 
-Dawn Engine is a work-in-progress C++ OOP-based 2D Game Engine inspired by Godot, utilising SDL2 for graphics.
+Dawn Engine is a work-in-progress C++ OOP-based 2D Game Engine inspired by Godot, utilising SDL2 for graphics. Since this is a solo project intended for personal use, branching and versioning is not utilised. 
 
 ## Key features
 Complete:
@@ -39,3 +39,11 @@ The nodes are layed out in a hierarchical scene graph - essentially a linked tre
 Nodes are, much like in Godot, inherited from a base Node class and further derived into `Node2D -> {CollisionObject2D,Sprite2D}` and `CollisionObject2D -> {Area2D, CharacterBody2D, StaticBody2D}`. 
 
 Nodes are basically objects, and can be seen as subtrees, inheriting as many children as they want. When a node is deleted, all of it's child nodes recurisvely destroy themselves (smart pointers). Nodes can be deleted by deallocating from the parent's `children` vector (same in root). 
+
+## Collision
+
+Collision detection is done by a Quadtree data structure which recursively checks for collisions between objects in the same or neighbouring space quadrants. 
+
+Once collision is detected, both colliding objects are made aware of the collision as well as what they are colliding with. From there, each object can handle collision in it's own way. 
+
+Currently, displacement collision resolution is being used to resolve collision between objects, though a move to impulse-based collision resolution is currently being worked on.
