@@ -12,7 +12,7 @@ Complete:
 - Node groups
 
 WIP:
-- Impulse-based collision resolution 
+- Raycasting 
 - Sprite animation system 
 - Collision layers 
 - Basic camera system 
@@ -47,5 +47,3 @@ Nodes are basically objects, and can be seen as subtrees, inheriting as many chi
 Collision detection is done by a Quadtree data structure which recursively checks for collisions between objects in the same or neighbouring space quadrants. 
 
 Once collision is detected, both colliding objects are made aware of the collision as well as what they are colliding with. From there, each object can handle collision in it's own way. 
-
-Currently, displacement collision resolution is being used to resolve collision between objects, though a move to impulse-based collision resolution is currently being worked on.
