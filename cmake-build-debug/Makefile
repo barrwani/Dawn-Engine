@@ -128,6 +128,30 @@ dawn-engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/build
 .PHONY : dawn-engine/fast
 
+src/Example/Player.obj: src/Example/Player.cpp.obj
+.PHONY : src/Example/Player.obj
+
+# target to build an object file
+src/Example/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj
+.PHONY : src/Example/Player.cpp.obj
+
+src/Example/Player.i: src/Example/Player.cpp.i
+.PHONY : src/Example/Player.i
+
+# target to preprocess a source file
+src/Example/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.i
+.PHONY : src/Example/Player.cpp.i
+
+src/Example/Player.s: src/Example/Player.cpp.s
+.PHONY : src/Example/Player.s
+
+# target to generate assembly for a file
+src/Example/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.s
+.PHONY : src/Example/Player.cpp.s
+
 src/Nodes/Area2D.obj: src/Nodes/Area2D.cpp.obj
 .PHONY : src/Nodes/Area2D.obj
 
@@ -296,125 +320,101 @@ src/Nodes/StaticBody2D.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.s
 .PHONY : src/Nodes/StaticBody2D.cpp.s
 
-src/Player.obj: src/Player.cpp.obj
-.PHONY : src/Player.obj
+src/base/QuadTree.obj: src/base/QuadTree.cpp.obj
+.PHONY : src/base/QuadTree.obj
 
 # target to build an object file
-src/Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.obj
-.PHONY : src/Player.cpp.obj
+src/base/QuadTree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.obj
+.PHONY : src/base/QuadTree.cpp.obj
 
-src/Player.i: src/Player.cpp.i
-.PHONY : src/Player.i
+src/base/QuadTree.i: src/base/QuadTree.cpp.i
+.PHONY : src/base/QuadTree.i
 
 # target to preprocess a source file
-src/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.i
-.PHONY : src/Player.cpp.i
+src/base/QuadTree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.i
+.PHONY : src/base/QuadTree.cpp.i
 
-src/Player.s: src/Player.cpp.s
-.PHONY : src/Player.s
+src/base/QuadTree.s: src/base/QuadTree.cpp.s
+.PHONY : src/base/QuadTree.s
 
 # target to generate assembly for a file
-src/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Player.cpp.s
-.PHONY : src/Player.cpp.s
+src/base/QuadTree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.s
+.PHONY : src/base/QuadTree.cpp.s
 
-src/QuadTree.obj: src/QuadTree.cpp.obj
-.PHONY : src/QuadTree.obj
+src/base/Vector2.obj: src/base/Vector2.cpp.obj
+.PHONY : src/base/Vector2.obj
 
 # target to build an object file
-src/QuadTree.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.obj
-.PHONY : src/QuadTree.cpp.obj
+src/base/Vector2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/Vector2.cpp.obj
+.PHONY : src/base/Vector2.cpp.obj
 
-src/QuadTree.i: src/QuadTree.cpp.i
-.PHONY : src/QuadTree.i
+src/base/Vector2.i: src/base/Vector2.cpp.i
+.PHONY : src/base/Vector2.i
 
 # target to preprocess a source file
-src/QuadTree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.i
-.PHONY : src/QuadTree.cpp.i
+src/base/Vector2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/Vector2.cpp.i
+.PHONY : src/base/Vector2.cpp.i
 
-src/QuadTree.s: src/QuadTree.cpp.s
-.PHONY : src/QuadTree.s
+src/base/Vector2.s: src/base/Vector2.cpp.s
+.PHONY : src/base/Vector2.s
 
 # target to generate assembly for a file
-src/QuadTree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/QuadTree.cpp.s
-.PHONY : src/QuadTree.cpp.s
+src/base/Vector2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/Vector2.cpp.s
+.PHONY : src/base/Vector2.cpp.s
 
-src/Vector2.obj: src/Vector2.cpp.obj
-.PHONY : src/Vector2.obj
+src/base/main.obj: src/base/main.cpp.obj
+.PHONY : src/base/main.obj
 
 # target to build an object file
-src/Vector2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Vector2.cpp.obj
-.PHONY : src/Vector2.cpp.obj
+src/base/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/main.cpp.obj
+.PHONY : src/base/main.cpp.obj
 
-src/Vector2.i: src/Vector2.cpp.i
-.PHONY : src/Vector2.i
+src/base/main.i: src/base/main.cpp.i
+.PHONY : src/base/main.i
 
 # target to preprocess a source file
-src/Vector2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Vector2.cpp.i
-.PHONY : src/Vector2.cpp.i
+src/base/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/main.cpp.i
+.PHONY : src/base/main.cpp.i
 
-src/Vector2.s: src/Vector2.cpp.s
-.PHONY : src/Vector2.s
+src/base/main.s: src/base/main.cpp.s
+.PHONY : src/base/main.s
 
 # target to generate assembly for a file
-src/Vector2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Vector2.cpp.s
-.PHONY : src/Vector2.cpp.s
+src/base/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/main.cpp.s
+.PHONY : src/base/main.cpp.s
 
-src/main.obj: src/main.cpp.obj
-.PHONY : src/main.obj
+src/base/root.obj: src/base/root.cpp.obj
+.PHONY : src/base/root.obj
 
 # target to build an object file
-src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/main.cpp.obj
-.PHONY : src/main.cpp.obj
+src/base/root.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/root.cpp.obj
+.PHONY : src/base/root.cpp.obj
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/root.obj: src/root.cpp.obj
-.PHONY : src/root.obj
-
-# target to build an object file
-src/root.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/root.cpp.obj
-.PHONY : src/root.cpp.obj
-
-src/root.i: src/root.cpp.i
-.PHONY : src/root.i
+src/base/root.i: src/base/root.cpp.i
+.PHONY : src/base/root.i
 
 # target to preprocess a source file
-src/root.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/root.cpp.i
-.PHONY : src/root.cpp.i
+src/base/root.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/root.cpp.i
+.PHONY : src/base/root.cpp.i
 
-src/root.s: src/root.cpp.s
-.PHONY : src/root.s
+src/base/root.s: src/base/root.cpp.s
+.PHONY : src/base/root.s
 
 # target to generate assembly for a file
-src/root.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/root.cpp.s
-.PHONY : src/root.cpp.s
+src/base/root.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/root.cpp.s
+.PHONY : src/base/root.cpp.s
 
 # Help Target
 help:
@@ -425,6 +425,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... dawn-engine
+	@echo ... src/Example/Player.obj
+	@echo ... src/Example/Player.i
+	@echo ... src/Example/Player.s
 	@echo ... src/Nodes/Area2D.obj
 	@echo ... src/Nodes/Area2D.i
 	@echo ... src/Nodes/Area2D.s
@@ -446,21 +449,18 @@ help:
 	@echo ... src/Nodes/StaticBody2D.obj
 	@echo ... src/Nodes/StaticBody2D.i
 	@echo ... src/Nodes/StaticBody2D.s
-	@echo ... src/Player.obj
-	@echo ... src/Player.i
-	@echo ... src/Player.s
-	@echo ... src/QuadTree.obj
-	@echo ... src/QuadTree.i
-	@echo ... src/QuadTree.s
-	@echo ... src/Vector2.obj
-	@echo ... src/Vector2.i
-	@echo ... src/Vector2.s
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
-	@echo ... src/root.obj
-	@echo ... src/root.i
-	@echo ... src/root.s
+	@echo ... src/base/QuadTree.obj
+	@echo ... src/base/QuadTree.i
+	@echo ... src/base/QuadTree.s
+	@echo ... src/base/Vector2.obj
+	@echo ... src/base/Vector2.i
+	@echo ... src/base/Vector2.s
+	@echo ... src/base/main.obj
+	@echo ... src/base/main.i
+	@echo ... src/base/main.s
+	@echo ... src/base/root.obj
+	@echo ... src/base/root.i
+	@echo ... src/base/root.s
 .PHONY : help
 
 

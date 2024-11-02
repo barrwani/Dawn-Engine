@@ -20,24 +20,25 @@ public:
     virtual ~Node()=default;
 
 
+
     void set_parent(Node* newparent){parent = newparent;}
     Node* get_parent(){return parent;}
 
     //Returns a vector of raw pointers to all children of a node
     std::unordered_set<Node*> get_children();
 
-    virtual void update(float delta) = 0;
-    virtual void draw() = 0;
+    virtual void update(float delta){};
+    virtual void draw(){};
     void setName(std::string newname){name = newname;}
 
 
-    virtual Vector2 getPosition()=0;
-    virtual Vector2 getDirection()=0;
-    virtual Vector2 getDimension()=0;
+    virtual Vector2 getPosition(){};
+    virtual Vector2 getDirection(){};
+    virtual Vector2 getDimension(){};
 
-    virtual void setPosition(Vector2 newpos)=0;
-    virtual void setDirection(Vector2 newdir)=0;
-    virtual void setDimension(Vector2 newdim)=0;
+    virtual void setPosition(Vector2 newpos){};
+    virtual void setDirection(Vector2 newdir){};
+    virtual void setDimension(Vector2 newdim){};
 
     std::string getName(){return name;}
     void addChild(std::unique_ptr<Node> child)

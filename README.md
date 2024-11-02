@@ -12,17 +12,19 @@ Complete:
 - Node groups
 
 WIP:
+- Scene change system
+- Enforced scene hierarchy (Allowing for one node to act as a scene for easily expandable multiple levels)
+- Lua script integration
+
+Planning:
+- Asset management system 
+- Tilemap System 
+- Node re-parenting
+- `queue_free()` for abstracted node deletion
 - Raycasting 
 - Sprite animation system 
 - Collision layers 
 - Basic camera system 
-
-Planning:
-- Asset management system 
-- Singleton 
-- Tilemap System 
-- Node re-parenting
-- `queue_free()` for abstracted node deletion
 
 
 

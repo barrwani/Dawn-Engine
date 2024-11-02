@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/asood/dawn-engine/include/Example/Player.h">
+			<Option target="dawn-engine"/>
+		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/include/Nodes/Area2D.h">
 			<Option target="dawn-engine"/>
 		</Unit>
@@ -105,16 +108,16 @@
 		<Unit filename="C:/Users/asood/dawn-engine/include/Nodes/StaticBody2D.h">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/include/Player.h">
+		<Unit filename="C:/Users/asood/dawn-engine/include/base/QuadTree.h">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/include/QuadTree.h">
+		<Unit filename="C:/Users/asood/dawn-engine/include/base/Vector2.h">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/include/Vector2.h">
+		<Unit filename="C:/Users/asood/dawn-engine/include/base/root.h">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/include/root.h">
+		<Unit filename="C:/Users/asood/dawn-engine/src/Example/Player.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/Nodes/Area2D.cpp">
@@ -138,19 +141,16 @@
 		<Unit filename="C:/Users/asood/dawn-engine/src/Nodes/StaticBody2D.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/src/Player.cpp">
+		<Unit filename="C:/Users/asood/dawn-engine/src/base/QuadTree.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/src/QuadTree.cpp">
+		<Unit filename="C:/Users/asood/dawn-engine/src/base/Vector2.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/src/Vector2.cpp">
+		<Unit filename="C:/Users/asood/dawn-engine/src/base/main.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/src/main.cpp">
-			<Option target="dawn-engine"/>
-		</Unit>
-		<Unit filename="C:/Users/asood/dawn-engine/src/root.cpp">
+		<Unit filename="C:/Users/asood/dawn-engine/src/base/root.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/CMakeLists.txt">

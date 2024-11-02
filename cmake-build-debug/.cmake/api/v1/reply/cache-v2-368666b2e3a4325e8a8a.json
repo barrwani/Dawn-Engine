@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "1"
+			"value" : "6"
 		},
 		{
 			"name" : "CMAKE_CODEBLOCKS_COMPILER_ID",

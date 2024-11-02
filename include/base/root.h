@@ -33,6 +33,12 @@ public:
 
     static bool running();
 
+    static bool scene_initialized;
+    static void switch_scene(std::unique_ptr<Node> newscene);
+    static void reload_current_scene();
+    static bool should_switch_scene;
+    static Node* get_current_scene() {return currentscene.get();}
+    static std::unique_ptr<Node> main_scene;
     static SDL_Renderer *renderer;
     static SDL_Event event;
     static bool isRunning;
@@ -41,12 +47,7 @@ public:
     static std::vector<Node*> nodes;
     static QuadTree colliders;
     static std::vector<std::unique_ptr<Node>> children;
-    enum gameState{
-    menu,
-    level1,
-    //etc
-    };
-    static int currentstate;
+    static std::unique_ptr<Node> currentscene;
 
 
 private:
