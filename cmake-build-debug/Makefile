@@ -128,6 +128,30 @@ dawn-engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/build
 .PHONY : dawn-engine/fast
 
+src/Example/ExampleScene.obj: src/Example/ExampleScene.cpp.obj
+.PHONY : src/Example/ExampleScene.obj
+
+# target to build an object file
+src/Example/ExampleScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj
+.PHONY : src/Example/ExampleScene.cpp.obj
+
+src/Example/ExampleScene.i: src/Example/ExampleScene.cpp.i
+.PHONY : src/Example/ExampleScene.i
+
+# target to preprocess a source file
+src/Example/ExampleScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.i
+.PHONY : src/Example/ExampleScene.cpp.i
+
+src/Example/ExampleScene.s: src/Example/ExampleScene.cpp.s
+.PHONY : src/Example/ExampleScene.s
+
+# target to generate assembly for a file
+src/Example/ExampleScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.s
+.PHONY : src/Example/ExampleScene.cpp.s
+
 src/Example/Player.obj: src/Example/Player.cpp.obj
 .PHONY : src/Example/Player.obj
 
@@ -344,6 +368,30 @@ src/base/QuadTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.s
 .PHONY : src/base/QuadTree.cpp.s
 
+src/base/SceneManager.obj: src/base/SceneManager.cpp.obj
+.PHONY : src/base/SceneManager.obj
+
+# target to build an object file
+src/base/SceneManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj
+.PHONY : src/base/SceneManager.cpp.obj
+
+src/base/SceneManager.i: src/base/SceneManager.cpp.i
+.PHONY : src/base/SceneManager.i
+
+# target to preprocess a source file
+src/base/SceneManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.i
+.PHONY : src/base/SceneManager.cpp.i
+
+src/base/SceneManager.s: src/base/SceneManager.cpp.s
+.PHONY : src/base/SceneManager.s
+
+# target to generate assembly for a file
+src/base/SceneManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dawn-engine.dir\build.make CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.s
+.PHONY : src/base/SceneManager.cpp.s
+
 src/base/Vector2.obj: src/base/Vector2.cpp.obj
 .PHONY : src/base/Vector2.obj
 
@@ -425,6 +473,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... dawn-engine
+	@echo ... src/Example/ExampleScene.obj
+	@echo ... src/Example/ExampleScene.i
+	@echo ... src/Example/ExampleScene.s
 	@echo ... src/Example/Player.obj
 	@echo ... src/Example/Player.i
 	@echo ... src/Example/Player.s
@@ -452,6 +503,9 @@ help:
 	@echo ... src/base/QuadTree.obj
 	@echo ... src/base/QuadTree.i
 	@echo ... src/base/QuadTree.s
+	@echo ... src/base/SceneManager.obj
+	@echo ... src/base/SceneManager.i
+	@echo ... src/base/SceneManager.s
 	@echo ... src/base/Vector2.obj
 	@echo ... src/base/Vector2.i
 	@echo ... src/base/Vector2.s

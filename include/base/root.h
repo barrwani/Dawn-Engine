@@ -7,6 +7,7 @@
 #include <vector>
 #include "QuadTree.h"
 #include <unordered_set>
+#include "SceneManager.h"
 
 
 class Node;
@@ -29,16 +30,16 @@ public:
 
     void clean();
 
-    static void addChild(std::unique_ptr<Node> child) {children.push_back(std::move(child));}
 
     static bool running();
 
-    static bool scene_initialized;
+    static Node* currentscene;
+    static SceneManager sceneManager;
     static void switch_scene(std::unique_ptr<Node> newscene);
     static void reload_current_scene();
     static bool should_switch_scene;
-    static Node* get_current_scene() {return currentscene.get();}
-    static std::unique_ptr<Node> main_scene;
+    static Node* get_current_scene() {return currentscene;}
+    static Node* main_scene;
     static SDL_Renderer *renderer;
     static SDL_Event event;
     static bool isRunning;
@@ -46,9 +47,12 @@ public:
     static SDL_Rect camera;
     static std::vector<Node*> nodes;
     static QuadTree colliders;
-    static std::vector<std::unique_ptr<Node>> children;
-    static std::unique_ptr<Node> currentscene;
+    static std::unique_ptr<Node> nextscene;
+    // Scene Management
+    template <typename SceneType>
+    static void loadScene();
 
+    static void switchScene(std::unique_ptr<Node> newScene);
 
 private:
     int cnt = 0;

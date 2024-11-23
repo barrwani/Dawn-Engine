@@ -2,17 +2,24 @@
 #include "../../include/base/root.h"
 #include "../../include/Nodes/Sprite2D.h"
 
-Player::Player(Vector2 position, Vector2 dim, float scale) : CharacterBody2D(position, dim, scale)
+Player::Player(Vector2 position, Vector2 dim, float scale)
+        : CharacterBody2D(position, dim, scale), sprite(nullptr) // Initialize sprite to nullptr
 {
     visiblecollision = true;
+
+    // Load the texture
     texture = LoadTexture("assets/coltex.png");
-    std::unique_ptr<Sprite2D> sprite2d = std::make_unique<Sprite2D>("assets/player.png",dim.x, dim.y);
-    Sprite2D* rawSpritePtr = sprite2d.get();
-    sprite = rawSpritePtr;
+    if (!texture) {
+        std::cerr << "Failed to load texture: assets/coltex.png" << std::endl;
+    }
+
+    // Create and add the Sprite2D
+    auto sprite2d = std::make_unique<Sprite2D>("assets/player.png", dim.x, dim.y);
     sprite2d->set_parent(this);
+    sprite = sprite2d.get(); // Store a raw pointer for internal use (not global)
     addChild(std::move(sprite2d));
-    root::nodes.push_back(rawSpritePtr);
 }
+
 
 void Player::jump()
 {
@@ -107,6 +114,7 @@ void Player::handleInput()
                 direction.y = 0;
             }
 
+
         }
         if (keystates[SDL_SCANCODE_RIGHT]) {
             if (!keystates[SDL_SCANCODE_LEFT]) {
@@ -115,6 +123,10 @@ void Player::handleInput()
             } else {
                 direction.x = 0;
             }
+        }
+        if(keystates[SDL_SCANCODE_R])
+        {
+            root::reload_current_scene();
         }
     }else
     {

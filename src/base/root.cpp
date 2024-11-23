@@ -1,22 +1,23 @@
 #include "../../include/base/root.h"
+#include "../../include/Example/ExampleScene.h"
 #include "../../include/Example/Player.h"
 #include "../../include/Nodes/StaticBody2D.h"
 #include <iostream>
 
-// Initialize static members of the root class
+SceneManager root::sceneManager;
+// Initialize static members of the root
 SDL_Renderer* root::renderer = nullptr;
+Node* root::currentscene = nullptr;
 SDL_Event root::event;
-bool root::scene_initialized = false;
 bool root::should_switch_scene = false; // Flag to indicate if the scene should switch
+std::unique_ptr<Node> root::nextscene = nullptr;
 
-bool root::justEntered = true; // Flag to track if the scene is newly entered
-std::unique_ptr<Node> root::currentscene = nullptr; // Pointer to the current scene
-std::unique_ptr<Node>  root::main_scene = nullptr; // Pointer to the main scene
+
+Node* root::main_scene = nullptr; // Main Scene is the first scene to be loaded
 bool root::isRunning = false; // Flag to track if the game is running
 
 QuadTree root::colliders(0, 0, 0, 100, 100); // QuadTree for collision detection
 std::vector<Node*> root::nodes; // Vector to store active nodes
-std::vector<std::unique_ptr<Node>> root::children; // Vector to store unique child nodes
 
 SDL_Rect root::camera = { 0,0,1920,1080 }; // Camera dimensions
 
@@ -48,55 +49,81 @@ void root::init(const char *title, int xpos, int ypos, int width, int height, bo
         if(renderer)
         {
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // Set render color to white
-            std::cout << "Renderer created!" << std::endl;
+            std::cout << "Renderer created!\n" << std::endl;
         }
         isRunning = true; // Set game running state to true
-        main_scene = std::make_unique<Player>(Vector2(400.0f,400.0f),
-                                              Vector2(32.0f,32.0f),
-                                              1.0f);
+        loadScene<ExampleScene>();
 
     } else
         isRunning = false; // Initialization failed
 }
 
-void root::switch_scene(std::unique_ptr<Node> newscene)
-{
-    should_switch_scene = true;      // Set flag to switch scenes
 
-    nodes.clear();       // Clear active nodes
-    colliders.clear();   // Clear colliders
-    children.clear();    // Clear children
+void root::reload_current_scene() {
+    Node *currentScene = sceneManager.getScene();
+    if (!currentScene) {
+        std::cerr << "No current scene to reload.\n"<< std::endl;
+        return;
+    }
 
-    currentscene = std::move(newscene);  // Set current scene to the new scene using move semantics
+    // Determine the type of the current scene and reload it
+    if (dynamic_cast<ExampleScene *>(currentScene)) {
+        loadScene<ExampleScene>(); // Reload ExampleScene
+    }
 }
 
-void root::reload_current_scene()
-{
-    switch_scene(std::move(currentscene));  // Move current scene back to itself to trigger reload
+void root::switchScene(std::unique_ptr<Node> newScene) {
+    std::cout << "Switching scenes...\n" << std::endl;
+
+    if (!newScene) {
+        std::cerr << "Error: newScene is nullptr.\n" << std::endl;
+        return;
+    }
+
+    std::cout << "New scene initialized: " << typeid(*newScene).name() << std::endl;
+
+    // Clear current nodes before switching scenes
+    nodes.clear();
+
+
+    // Set the new scene
+    sceneManager.setScene(std::move(newScene));
+
+    // Populate the nodes list with all nodes in the new scene hierarchy
+    Node* currentScene = sceneManager.getScene();
+    if (currentScene)
+    {
+        std::function<void(Node*)> collectNodes = [&](Node* node)
+                {
+            nodes.push_back(node); // Add the node to the active list
+            for (Node* child : node->get_children())
+            {
+                collectNodes(child); // Recursively add children
+            }
+        };
+
+        collectNodes(currentScene); // Start collecting nodes from the root node
+    }
+
+    // Debug node count
+    std::cout << "Nodes in new scene: " << nodes.size() << std::endl;
 }
 
-// Handle scene initialization
-//TODO: Rethink logic with main_scene, current_scene, etc..
+
+template <typename SceneType>
+void root::loadScene()
+{
+    static_assert(std::is_base_of<Node, SceneType>::value, "SceneType must inherit from Node");
+    auto newScene = std::make_unique<SceneType>();
+    switchScene(std::move(newScene));
+}
+
 void root::scene(float delta)
 {
-    if (justEntered || !currentscene || should_switch_scene)
+    if (nextscene)
     {
-        if (!scene_initialized)
-        {
-            if (!currentscene)
-            {
-                currentscene = std::move(main_scene); // Move main scene to current scene
-            }
-            nodes.push_back(currentscene.get());
-            for (auto &child : currentscene->children)
-            {
-                nodes.push_back(child.get());
-            }
-            children.push_back(std::move(currentscene)); // Only move once
-            scene_initialized = true;  // Mark as initialized
-        }
-        justEntered = false;
-        should_switch_scene = false;
+        switchScene(std::move(nextscene));
+        nextscene = nullptr; // Reset the next scene pointer
     }
 }
 
@@ -130,6 +157,10 @@ void root::render(float delta)
     SDL_RenderClear(renderer); // Clear the screen
     for(Node* node : nodes) // Draw each active node
     {
+        if (!node) {
+            std::cerr << "Error: Null node in render!\n" << std::endl;
+            continue;
+        }
         node->draw();
     }
     SDL_RenderPresent(renderer); // Present the drawn frame
@@ -147,3 +178,5 @@ void root::clean()
 
 // Return the running state of the game
 bool root::running() { return isRunning; }
+
+

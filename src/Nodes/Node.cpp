@@ -13,6 +13,25 @@ std::unordered_set<Node*> Node::get_children()
     return rawchildren;
 }
 
+void Node::update(float delta)
+{
+    for(auto& child : children)
+    {
+        child->update(delta);
+    }
+}
+
+
+void Node::draw()
+{
+    for(auto& child : children)
+    {
+        child->draw();
+    }
+}
+
+
+
 bool Node::is_in_group(std::string groupname)
 {
     return groups.find(groupname) != groups.end();

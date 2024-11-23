@@ -29,6 +29,7 @@ CharacterBody2D::~CharacterBody2D()
 
 void CharacterBody2D::update(float delta)
 {
+
     updateCollisionShape2D();
 
 

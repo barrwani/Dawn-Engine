@@ -17,9 +17,11 @@ const int MAXGROUPS = 30;
 class Node {
 public:
     std::size_t node_id;
-    virtual ~Node()=default;
+    virtual ~Node(){std::cout << "Destroying Node: " << name << std::endl;}
+    Node() = default;
 
 
+    void clearChildren(){children.clear();};
 
     void set_parent(Node* newparent){parent = newparent;}
     Node* get_parent(){return parent;}
@@ -27,9 +29,10 @@ public:
     //Returns a vector of raw pointers to all children of a node
     std::unordered_set<Node*> get_children();
 
-    virtual void update(float delta){};
-    virtual void draw(){};
+    virtual void update(float delta);
+    virtual void draw();
     void setName(std::string newname){name = newname;}
+
 
 
     virtual Vector2 getPosition(){};
@@ -55,9 +58,11 @@ public:
     bool remove_from_group(std::string groupname);
 
 
-
 //unique ptr so parent owns all children, makes memory management easy
 std::vector<std::unique_ptr<Node>> children;
+
+
+
 protected:
     //if parent==nullptr add node to root child array
     Node* parent;

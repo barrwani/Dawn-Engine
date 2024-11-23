@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/asood/dawn-engine/src/Example/ExampleScene.cpp" "CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Example/Player.cpp" "CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Nodes/Area2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/Area2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/Area2D.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Nodes/CharacterBody2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/CharacterBody2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/CharacterBody2D.cpp.obj.d"
@@ -17,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/asood/dawn-engine/src/Nodes/Sprite2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/Sprite2D.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/Nodes/StaticBody2D.cpp" "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/base/QuadTree.cpp" "CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.obj.d"
+  "C:/Users/asood/dawn-engine/src/base/SceneManager.cpp" "CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/base/Vector2.cpp" "CMakeFiles/dawn-engine.dir/src/base/Vector2.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/base/Vector2.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/base/main.cpp" "CMakeFiles/dawn-engine.dir/src/base/main.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/base/main.cpp.obj.d"
   "C:/Users/asood/dawn-engine/src/base/root.cpp" "CMakeFiles/dawn-engine.dir/src/base/root.cpp.obj" "gcc" "CMakeFiles/dawn-engine.dir/src/base/root.cpp.obj.d"

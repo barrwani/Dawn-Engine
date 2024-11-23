@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/asood/dawn-engine/include/Example/ExampleScene.h">
+			<Option target="dawn-engine"/>
+		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/include/Example/Player.h">
 			<Option target="dawn-engine"/>
 		</Unit>
@@ -111,10 +114,16 @@
 		<Unit filename="C:/Users/asood/dawn-engine/include/base/QuadTree.h">
 			<Option target="dawn-engine"/>
 		</Unit>
+		<Unit filename="C:/Users/asood/dawn-engine/include/base/SceneManager.h">
+			<Option target="dawn-engine"/>
+		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/include/base/Vector2.h">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/include/base/root.h">
+			<Option target="dawn-engine"/>
+		</Unit>
+		<Unit filename="C:/Users/asood/dawn-engine/src/Example/ExampleScene.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/Example/Player.cpp">
@@ -142,6 +151,9 @@
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/base/QuadTree.cpp">
+			<Option target="dawn-engine"/>
+		</Unit>
+		<Unit filename="C:/Users/asood/dawn-engine/src/base/SceneManager.cpp">
 			<Option target="dawn-engine"/>
 		</Unit>
 		<Unit filename="C:/Users/asood/dawn-engine/src/base/Vector2.cpp">

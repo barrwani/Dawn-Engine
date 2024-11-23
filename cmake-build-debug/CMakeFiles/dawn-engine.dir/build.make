@@ -248,6 +248,36 @@ CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\asood\dawn-engine\src\Example\Player.cpp -o CMakeFiles\dawn-engine.dir\src\Example\Player.cpp.s
 
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj: CMakeFiles/dawn-engine.dir/flags.make
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj: CMakeFiles/dawn-engine.dir/includes_CXX.rsp
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj: C:/Users/asood/dawn-engine/src/Example/ExampleScene.cpp
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj: CMakeFiles/dawn-engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\asood\dawn-engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj -MF CMakeFiles\dawn-engine.dir\src\Example\ExampleScene.cpp.obj.d -o CMakeFiles\dawn-engine.dir\src\Example\ExampleScene.cpp.obj -c C:\Users\asood\dawn-engine\src\Example\ExampleScene.cpp
+
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.i"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\asood\dawn-engine\src\Example\ExampleScene.cpp > CMakeFiles\dawn-engine.dir\src\Example\ExampleScene.cpp.i
+
+CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.s"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\asood\dawn-engine\src\Example\ExampleScene.cpp -o CMakeFiles\dawn-engine.dir\src\Example\ExampleScene.cpp.s
+
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj: CMakeFiles/dawn-engine.dir/flags.make
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj: CMakeFiles/dawn-engine.dir/includes_CXX.rsp
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj: C:/Users/asood/dawn-engine/src/base/SceneManager.cpp
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj: CMakeFiles/dawn-engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\asood\dawn-engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj -MF CMakeFiles\dawn-engine.dir\src\base\SceneManager.cpp.obj.d -o CMakeFiles\dawn-engine.dir\src\base\SceneManager.cpp.obj -c C:\Users\asood\dawn-engine\src\base\SceneManager.cpp
+
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.i"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\asood\dawn-engine\src\base\SceneManager.cpp > CMakeFiles\dawn-engine.dir\src\base\SceneManager.cpp.i
+
+CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.s"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\asood\dawn-engine\src\base\SceneManager.cpp -o CMakeFiles\dawn-engine.dir\src\base\SceneManager.cpp.s
+
 # Object files for target dawn-engine
 dawn__engine_OBJECTS = \
 "CMakeFiles/dawn-engine.dir/src/base/main.cpp.obj" \
@@ -261,7 +291,9 @@ dawn__engine_OBJECTS = \
 "CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj" \
 "CMakeFiles/dawn-engine.dir/src/Nodes/CharacterBody2D.cpp.obj" \
 "CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.obj" \
-"CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj"
+"CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj" \
+"CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj" \
+"CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj"
 
 # External object files for target dawn-engine
 dawn__engine_EXTERNAL_OBJECTS =
@@ -278,11 +310,13 @@ dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/Nodes/StaticBody2D.cpp.obj
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/Nodes/CharacterBody2D.cpp.obj
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/base/QuadTree.cpp.obj
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/Example/Player.cpp.obj
+dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/Example/ExampleScene.cpp.obj
+dawn-engine.exe: CMakeFiles/dawn-engine.dir/src/base/SceneManager.cpp.obj
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/build.make
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/linkLibs.rsp
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/objects1.rsp
 dawn-engine.exe: CMakeFiles/dawn-engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\asood\dawn-engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable dawn-engine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\asood\dawn-engine\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable dawn-engine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\dawn-engine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

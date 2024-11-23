@@ -37,6 +37,10 @@ add_executable(dawn-engine src/base/main.cpp
         include/base/QuadTree.h
         src/Example/Player.cpp
         include/Example/Player.h
+        src/Example/ExampleScene.cpp
+        include/Example/ExampleScene.h
+        src/base/SceneManager.cpp
+        include/base/SceneManager.h
 )
 
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2 )
