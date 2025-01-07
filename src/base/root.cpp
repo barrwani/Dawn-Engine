@@ -84,7 +84,7 @@ void root::switchScene(std::unique_ptr<Node> newScene) {
 
     // Clear current nodes before switching scenes
     nodes.clear();
-
+    colliders.clear();
 
     // Set the new scene
     sceneManager.setScene(std::move(newScene));
@@ -95,10 +95,14 @@ void root::switchScene(std::unique_ptr<Node> newScene) {
     {
         std::function<void(Node*)> collectNodes = [&](Node* node)
                 {
+            if (!node) return; // Ensure node is not null
             nodes.push_back(node); // Add the node to the active list
             for (Node* child : node->get_children())
             {
-                collectNodes(child); // Recursively add children
+                if(child)
+                {
+                    collectNodes(child); // Recursively add children
+                }
             }
         };
 
